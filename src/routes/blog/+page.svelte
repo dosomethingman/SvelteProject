@@ -2,6 +2,10 @@
     <title>Мой блог</title>
 </svelte:head>
 
+<script>
+    import {routes} from './routes';
+</script>
+
 <div class="container">
     <h1>Мои статьи</h1>
     <div class="blogposts">
@@ -10,16 +14,12 @@
                 <h2>{page.title}</h2>
                 <p>{page.body}</p>
                 <p class="readmore">
-                    <a class="link" href={'/blog/posts/${page.id}'}>Читать дальше</a>
+                    <a class="link" href={`/blog/posts/${page.id}`}>Читать дальше</a>
                 </p>
             </div>
         {/each}
     </div>
 </div>
-
-<script>
-    import {routes} from './routes';
-</script>
 
 <style>
     .container {
