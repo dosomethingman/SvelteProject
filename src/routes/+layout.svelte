@@ -1,4 +1,5 @@
 <script>
+    import "../styles/css/global.css";
     const nav = [
         {title: "Обо мне", href: "/about", isShow: true},
         {title: "Блог", href: "/blog", isShow: true},
