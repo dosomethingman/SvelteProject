@@ -20,6 +20,11 @@
         ]
         newCost = {};
     };
+    function deleteExpence (index) {
+        costs.splice(index, 1);
+        costs = costs;
+        console.log(costs);
+    }
 </script>
 
 <main>
@@ -65,7 +70,7 @@
                     {:else}
                         <td>Не указана</td>
                     {/if}
-                    <td>Действия</td>
+                    <td><button class="delete-cost" on:click={() => deleteExpence(index)}>Удалить</button></td>
                 </tr>
             {/each}
         </tbody>
@@ -74,30 +79,36 @@
 </main> 
     
 <style>
-    .cost-form, .costs-table {
-        border: 2px solid magenta;
+    .cost-form, td {
+        background-color: rgb(250, 250, 250);
         box-shadow: 5px 4px 3px lightgray;
+        border: 1px solid magenta;
         color: navy;
     }
     td {
-        border: 1px solid lightgray;
+        padding: 5px;
     }
     .cost-form {
         display: flex;
-        justify-content: space-between;
-        padding: 15px;
+        justify-content: space-around;
+        padding: 5px;
+        width: 100%;
     }
     .costs-table {
         width: 100%;
         margin-top: 25px;
-        padding: 10px;
     }
-    .add-cost {
+    .add-cost, .delete-cost {
         appearance: none;
         border: none;
         padding: 0;
         font-size: 22px;
         color: navy;
         background-color: transparent;
+        cursor: pointer;
+    }
+    .delete-cost {
+        font-size: unset;
+        color: red;
     }
 </style>
