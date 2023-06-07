@@ -23,7 +23,6 @@
     function deleteExpence (index) {
         costs.splice(index, 1);
         costs = costs;
-        console.log(costs);
     }
 </script>
 
